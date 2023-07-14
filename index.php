@@ -28,10 +28,19 @@ $persons = [
 ];
 
 foreach ($persons as $person) {
-    print_r($person['name']);
+    if ($person ['is_married']) {
+        echo $person['name'];
+    }
 }
 
+$age = 20;
+$name = 'Boris';
 
+if ($name) {
+    echo 'yes';
+} else {
+    echo 'no';
+}
 
 
 
@@ -40,26 +49,26 @@ foreach ($persons as $person) {
 
 // Домашка
 
-$persons2 = [
-    [
-        'name' => 'Danil',
-        'age' => 21,
-        'hobby' => 'developer',
-        'is_married' => false,
-        'pet' => 'nothing',
-        'pet_name' => 'nothing'
-    ],
-    [
-        'name' => 'Valik',
-        'age' => 22,
-        'hobby' => 'swimming',
-        'is_married' => false,
-        'pet' => 'cat',
-        'pet_name' => 'Dasha',
-        'cars' => ['Toyota', 'jigul']
-    ]
-];
-
-foreach ($persons2 as $person) {
-    print_r($person['age']);
-}
+//$persons2 = [
+//    [
+//        'name' => 'Danil',
+//        'age' => 21,
+//        'hobby' => 'developer',
+//        'is_married' => false,
+//        'pet' => 'nothing',
+//        'pet_name' => 'nothing'
+//    ],
+//    [
+//        'name' => 'Valik',
+//        'age' => 22,
+//        'hobby' => 'swimming',
+//        'is_married' => false,
+//        'pet' => 'cat',
+//        'pet_name' => 'Dasha',
+//        'cars' => ['Toyota', 'jigul']
+//    ]
+//];
+//
+//foreach ($persons2 as $person) {
+//    print_r($person['age']);
+//}
