@@ -1,16 +1,34 @@
 <?php
-$person = [
-    'name' => 'Victor',
-    'age' => 20,
-    'hobby' => 'swimming',
-    'is_married' => true,
-    'pet' => 'cat',
-    'pet_name' => 'Barsik'
+$persons = [
+    [
+        'name' => 'Victor',
+        'age' => 20,
+        'hobby' => 'swimming',
+        'is_married' => true,
+        'pet' => 'cat',
+        'pet_name' => 'Barsik',
+        'cars' => ['jigul', 'moskvich','volga']
+    ],
+    [
+        'name' => 'Karl',
+        'age' => 18,
+        'hobby' => 'swimming',
+        'is_married' => false,
+        'pet' => 'cat',
+        'pet_name' => 'Barsik'
+    ],
+    [
+        'name' => 'Margo',
+        'age' => 18,
+        'hobby' => 'swimming',
+        'is_married' => false,
+        'pet' => 'cat',
+        'pet_name' => 'Barsik'
+    ]
 ];
 
-foreach ($person as $key => $item) {
-    echo $key . ": ";
-    echo $item . "\n";
+foreach ($persons as $person) {
+    print_r($person['name']);
 }
 
 
@@ -18,31 +36,30 @@ foreach ($person as $key => $item) {
 
 
 
-//Домашка
-$person2 = [
-    'name' => 'Danil',
-    'age' => 21,
-    'hobby' => 'developer',
-    'is_married' => false,
-    'pet' => 'nothing',
-    'pet_name' => 'nothing'
+
+
+// Домашка
+
+$persons2 = [
+    [
+        'name' => 'Danil',
+        'age' => 21,
+        'hobby' => 'developer',
+        'is_married' => false,
+        'pet' => 'nothing',
+        'pet_name' => 'nothing'
+    ],
+    [
+        'name' => 'Valik',
+        'age' => 22,
+        'hobby' => 'swimming',
+        'is_married' => false,
+        'pet' => 'cat',
+        'pet_name' => 'Dasha',
+        'cars' => ['Toyota', 'jigul']
+    ]
 ];
 
-foreach ($person2 as $key => $item) {
-    echo "$key" . ': ';
-    echo "$item" . "\n";
-}
-
-$person3 = [
-    'name' => 'Valik',
-    'age' => 22,
-    'hobby' => 'swimming',
-    'is_married' => false,
-    'pet' => 'cat',
-    'pet_name' => 'Dasha'
-];
-
-foreach ($person3 as $key => $item) {
-    echo $key . ": ";
-    echo $item . "\n";
+foreach ($persons2 as $person) {
+    print_r($person['age']);
 }
