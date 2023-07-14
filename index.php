@@ -27,19 +27,24 @@ $persons = [
     ]
 ];
 
-foreach ($persons as $person) {
-    if ($person ['is_married']) {
-        echo $person['name'];
-    }
-}
+//foreach ($persons as $person) {
+//    if ($person ['is_married']) {
+//        echo $person['name'];
+//    }
+//}
 
-$age = 20;
-$name = 'Boris';
+$flat = '20';
+$name = 'Gena';
+// && - значит и
+// || - значит или
+// != - значит не равно
+// = - значит равно
+// === - значит строго равно
 
-if ($name) {
-    echo 'yes';
+if ($flat === 20 || $flat = 20) {
+    echo 'Yes';
 } else {
-    echo 'no';
+    echo 'No';
 }
 
 
