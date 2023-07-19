@@ -1,48 +1,78 @@
 <?php
 class Person{
-    public $name = 'Victor';
-
+    public $name = 'Bob';
     public $age = 20;
 
-    public $isMarried = true;
+    public function setName($name) {
+        $this->name = $name;
+    }
 
-    public function sayHello() {
-        echo 'Hello, my friend\'s!';
+    public function setAge($age) {
+        $this->age = $age;
+    }
+
+    public function getName() {
+        return $this->name;
+    }
+    public function getAge() {
+        return $this->age;
     }
 }
 
 $person = new Person();
+$person2= new Person();
+$person3 = new Person();
+
+$person->setName('Vasya');
+$person->setAge(30);
 echo $person->name;
 echo $person->age;
-echo $person->isMarried;
-$person->sayHello();
+
+echo $person->getName();
+echo $person->getAge();
 
 
-// Домашка
-class Swimming{
-    public $title = 'swimming';
-    public $yearsOfTraining = '3 years';
-    public function timeOfSwimming() {
-        echo 'I\'m swimmin\'g 2 hour\'s per day';
+// домашка
+class Cat{
+    public $name = 'Murka';
+    public $age = 5;
+
+    public function setName($name) {
+        $this->name = $name;
+    }
+    public function setAge($age) {
+        $this->age = $age;
     }
 }
 
-$swimming = new Swimming();
-echo $swimming->title;
-echo $swimming->yearsOfTraining;
-$swimming->timeOfSwimming();
+$murka = new Cat();
+$murka->setName("Barsik");
+echo $murka->name;
+$murka->setAge(3);
+echo $murka->age;
 
-class Gym{
-    public $title = 'Gym';
-    public $year = '1 year';
-    public $isCoach = true;
-    public function timeOfTraining() {
-        echo 'I train 1 hour per day';
+class Dog{
+    public $name = 'Erophei';
+    public $age = 9;
+
+    public function setName($name) {
+        $this->name = $name;
+    }
+    public function getName() {
+        return $this->name;
+    }
+
+    public function setAge($age) {
+        $this->age = $age;
+    }
+
+    public function getAge() {
+        return $this->age;
     }
 }
 
-$jock = new Gym();
-echo $jock->title;
-echo $jock->year;
-echo $jock->isCoach;
-$jock->timeOfTraining();
+$dog = new Dog();
+$dog->setName('Chapa');
+echo $dog->getName();
+$dog->setAge(3);
+echo $dog->getAge();
