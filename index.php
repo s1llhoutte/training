@@ -1,49 +1,48 @@
 <?php
-function getSum($a, $b) {
-    $sum = $a + $b;
-    echo 'Hello';
-    return $sum;
+class Person{
+    public $name = 'Victor';
+
+    public $age = 20;
+
+    public $isMarried = true;
+
+    public function sayHello() {
+        echo 'Hello, my friend\'s!';
+    }
 }
 
-$result = getSum(10, 5);
-echo $result;
-
-// or
-
-echo getSum(10, 5);
-
-// or
-
-$num = getSum(10, 5);
-echo $num + 20;
+$person = new Person();
+echo $person->name;
+echo $person->age;
+echo $person->isMarried;
+$person->sayHello();
 
 
 // Домашка
-
-function getHomeSum($a, $b) {
-    $sum = $a + $b;
-    return $sum;
+class Swimming{
+    public $title = 'swimming';
+    public $yearsOfTraining = '3 years';
+    public function timeOfSwimming() {
+        echo 'I\'m swimmin\'g 2 hour\'s per day';
+    }
 }
 
-echo 'Первый результат: ' . getHomeSum(115,10) . "\n";
+$swimming = new Swimming();
+echo $swimming->title;
+echo $swimming->yearsOfTraining;
+$swimming->timeOfSwimming();
 
-function getMinus($b, $c) {
-    $min = $b - $c;
-    return $min;
+class Gym{
+    public $title = 'Gym';
+    public $year = '1 year';
+    public $isCoach = true;
+    public function timeOfTraining() {
+        echo 'I train 1 hour per day';
+    }
 }
 
-echo 'Второй результат: ' . getMinus(45, 63) . "\n";
-
-function getDelete($d, $f) {
-    $del = $d / $f;
-    return $del;
-}
-
-echo 'Третий результат: ' . getDelete(125, 5) . "\n";
-
-function getDeleteSum($a, $b, $c) {
-    $result = $a / ($b+$c);
-    return $result;
-}
-
-echo 'Четвертый результат: ' . getDeleteSum(150, 2, 6) . "\n";
+$jock = new Gym();
+echo $jock->title;
+echo $jock->year;
+echo $jock->isCoach;
+$jock->timeOfTraining();
