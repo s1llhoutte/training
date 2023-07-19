@@ -7,29 +7,35 @@ function sayHello() {
     echo $name;
 }
 
-sayHello();
+//sayHello();
 
 
 // домашка
 
-function sum() {
-    $sum = 5 + 10;
+function sum($a, $b) {
+    $sum = $a + $b;
     echo $sum;
 }
-sum();
 
-function minus() {
-    $min = 150 - 10;
+echo 'Первый результат :' . sum(115,10) . "\n";
+
+function minus($b, $c) {
+    $min = $b - $c;
     echo $min;
 }
 
-minus();
+echo 'Второй результат :' . minus(45, 63) . "\n";
 
-function makeMeCoffee() {
-    $coffee = 'Americano';
-    $officiant = 'Maria';
-    $text = $officiant . 'make me coffee, ' . $coffee;
-    echo $text;
+function delete($d, $f) {
+    $del = $d / $f;
+    echo $del;
 }
 
-makeMeCoffee();
+echo 'Третий результат :' . delete(125, 5) . "\n";
+
+function deleteSum($a, $b, $c) {
+    $result = $a / ($b+$c);
+    echo $result;
+}
+
+echo 'Четвертый результат :' . deleteSum(150, 2, 6) . "\n";
