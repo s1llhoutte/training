@@ -1,41 +1,49 @@
 <?php
-
-function sayHello() {
-    echo 'hello';
-    echo 'lalalal';
-    $name = 'Vasya';
-    echo $name;
-}
-
-//sayHello();
-
-
-// домашка
-
-function sum($a, $b) {
+function getSum($a, $b) {
     $sum = $a + $b;
-    echo $sum;
+    echo 'Hello';
+    return $sum;
 }
 
-echo 'Первый результат :' . sum(115,10) . "\n";
+$result = getSum(10, 5);
+echo $result;
 
-function minus($b, $c) {
+// or
+
+echo getSum(10, 5);
+
+// or
+
+$num = getSum(10, 5);
+echo $num + 20;
+
+
+// Домашка
+
+function getHomeSum($a, $b) {
+    $sum = $a + $b;
+    return $sum;
+}
+
+echo 'Первый результат: ' . getHomeSum(115,10) . "\n";
+
+function getMinus($b, $c) {
     $min = $b - $c;
-    echo $min;
+    return $min;
 }
 
-echo 'Второй результат :' . minus(45, 63) . "\n";
+echo 'Второй результат: ' . getMinus(45, 63) . "\n";
 
-function delete($d, $f) {
+function getDelete($d, $f) {
     $del = $d / $f;
-    echo $del;
+    return $del;
 }
 
-echo 'Третий результат :' . delete(125, 5) . "\n";
+echo 'Третий результат: ' . getDelete(125, 5) . "\n";
 
-function deleteSum($a, $b, $c) {
+function getDeleteSum($a, $b, $c) {
     $result = $a / ($b+$c);
-    echo $result;
+    return $result;
 }
 
-echo 'Четвертый результат :' . deleteSum(150, 2, 6) . "\n";
+echo 'Четвертый результат: ' . getDeleteSum(150, 2, 6) . "\n";
