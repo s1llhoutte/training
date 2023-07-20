@@ -6,10 +6,18 @@ class Person
     public $age = 20;
     public $job = 'developer';
 
+    public function __construct($name, $age, $job)
+    {
+        $this->name = $name;
+        $this->age = $age;
+        $this->job = $job;
+    }
+
     public function sayHello()
     {
         echo 'Hello, i\'m Bob';
     }
+
 }
 
 class Developer extends Person
@@ -36,40 +44,43 @@ class Manager extends Person
     }
 }
 
-$manager = new Manager();
+$manager = new Manager('Maria', 23, 'manager');
 echo $manager->name;
-
-$director = new Director();
-$director->sayHello();
 
 
 // Домашка
-
-class Persona
+class Plant
 {
-    public $name = 'Victor';
-    public $age = 34;
-    public $hobby = 'swimming';
-}
+    public $color;
+    public $price;
+    public $place;
 
-class Pojarnii extends Persona
-{
-    public function work()
+    public function __construct($color, $price, $place)
     {
-        echo 'Pojarnii is working';
+        $this->color = $color;
+        $this->price = $price;
+        $this->place = $place;
     }
 }
 
-$pojarnii = new Pojarnii();
-echo $pojarnii->name;
-
-class Electric extends Persona
+class Akaciya extends Plant
 {
-    public function work()
+    public function plants()
     {
-        echo 'Electric is also working';
+        echo 'Akacia life is matter';
     }
 }
 
-$electric = new Electric();
-echo $electric->age;
+$akaciya = new Akaciya('green', '120 grn', 'sun');
+echo $akaciya->color;
+
+class Mushroom extends Plant
+{
+    public function plants()
+    {
+        echo 'mushroom is also plant';
+    }
+}
+
+$myxomor = new Mushroom('red', '10 grn', 'forest');
+echo $myxomor->place;
