@@ -22,10 +22,19 @@ class Person
 
 class Developer extends Person
 {
+    public $timePerWeek = 20;
+
+    public function __construct($name, $age, $job, $timePerWeek)
+    {
+        parent::__construct($name, $age, $job);
+        $this->timePerWeek = $timePerWeek;
+    }
+
     public function work()
     {
         echo 'developer is working';
     }
+
 }
 
 class Director extends Person
@@ -44,43 +53,44 @@ class Manager extends Person
     }
 }
 
-$manager = new Manager('Maria', 23, 'manager');
-echo $manager->name;
+$developer = new Developer('John', 23, 'manager',20);
+echo $developer->timePerWeek;
+
 
 
 // Домашка
-class Plant
-{
-    public $color;
-    public $price;
-    public $place;
-
-    public function __construct($color, $price, $place)
-    {
-        $this->color = $color;
-        $this->price = $price;
-        $this->place = $place;
-    }
-}
-
-class Akaciya extends Plant
-{
-    public function plants()
-    {
-        echo 'Akacia life is matter';
-    }
-}
-
-$akaciya = new Akaciya('green', '120 grn', 'sun');
-echo $akaciya->color;
-
-class Mushroom extends Plant
-{
-    public function plants()
-    {
-        echo 'mushroom is also plant';
-    }
-}
-
-$myxomor = new Mushroom('red', '10 grn', 'forest');
-echo $myxomor->place;
+//class Plant
+//{
+//    public $color;
+//    public $price;
+//    public $place;
+//
+//    public function __construct($color, $price, $place)
+//    {
+//        $this->color = $color;
+//        $this->price = $price;
+//        $this->place = $place;
+//    }
+//}
+//
+//class Akaciya extends Plant
+//{
+//    public function plants()
+//    {
+//        echo 'Akacia life is matter';
+//    }
+//}
+//
+//$akaciya = new Akaciya('green', '120 grn', 'sun');
+//echo $akaciya->color;
+//
+//class Mushroom extends Plant
+//{
+//    public function plants()
+//    {
+//        echo 'mushroom is also plant';
+//    }
+//}
+//
+//$myxomor = new Mushroom('red', '10 grn', 'forest');
+//echo $myxomor->place;
