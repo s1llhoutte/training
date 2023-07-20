@@ -1,10 +1,10 @@
 <?php
 
-class Person
+abstract class Person
 {
-    public $name = 'Bob';
-    public $age = 20;
-    public $job = 'developer';
+    public $name;
+    public $age;
+    public $job;
 
     public function __construct($name, $age, $job)
     {
@@ -12,85 +12,60 @@ class Person
         $this->age = $age;
         $this->job = $job;
     }
-
-    public function sayHello()
-    {
-        echo 'Hello, i\'m Bob';
-    }
-
 }
 
 class Developer extends Person
 {
-    public $timePerWeek = 20;
+    public $timePerWeek;
 
     public function __construct($name, $age, $job, $timePerWeek)
     {
         parent::__construct($name, $age, $job);
         $this->timePerWeek = $timePerWeek;
     }
-
-    public function work()
-    {
-        echo 'developer is working';
-    }
-
 }
 
-class Director extends Person
+$developer = new Developer('Viktor', 20, 'developer', 20);
+echo $developer->name;
+
+abstract class Buildings
 {
-    public function work()
+    public $price;
+    public $size;
+    public $buildings;
+
+    public function __construct($price, $size, $buildings)
     {
-        echo 'director is working';
+        $this->price = $price;
+        $this->size = $size;
+        $this->buildings = $buildings;
     }
 }
 
-class Manager extends Person
+class Dacha extends Buildings
 {
-    public function work()
+    public $time;
+
+    public function __construct($price, $size, $buildings, $time)
     {
-        echo 'manager is working';
+        parent::__construct($price, $size, $buildings);
+        $this->time = $time;
     }
 }
 
-$developer = new Developer('John', 23, 'manager',20);
-echo $developer->timePerWeek;
+$dacha = new Dacha(200, '300 metrov', 'not big', '3 hours per week');
+echo $dacha->buildings;
 
 
+class Magazine extends Buildings
+{
+    public $time;
+    public function __construct($price, $size, $buildings, $time)
+    {
+        $this->time = $time;
+        parent::__construct($price, $size, $buildings);
+    }
+}
 
-// Домашка
-//class Plant
-//{
-//    public $color;
-//    public $price;
-//    public $place;
-//
-//    public function __construct($color, $price, $place)
-//    {
-//        $this->color = $color;
-//        $this->price = $price;
-//        $this->place = $place;
-//    }
-//}
-//
-//class Akaciya extends Plant
-//{
-//    public function plants()
-//    {
-//        echo 'Akacia life is matter';
-//    }
-//}
-//
-//$akaciya = new Akaciya('green', '120 grn', 'sun');
-//echo $akaciya->color;
-//
-//class Mushroom extends Plant
-//{
-//    public function plants()
-//    {
-//        echo 'mushroom is also plant';
-//    }
-//}
-//
-//$myxomor = new Mushroom('red', '10 grn', 'forest');
-//echo $myxomor->place;
+$stroitel = new Magazine(100, '500 m2', 'very big', '0,5 hours');
+echo $stroitel->time;
