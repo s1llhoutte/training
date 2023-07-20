@@ -1,71 +1,51 @@
 <?php
 
-abstract class Person
+class Person
 {
-    public $name;
-    public $age;
-    public $job;
+    public static $name;
 
-    public function __construct($name, $age, $job)
+    public static function sum($a, $b)
     {
-        $this->name = $name;
-        $this->age = $age;
-        $this->job = $job;
+        echo $a + $b;
+    }
+
+    public static function setName($name)
+    {
+        self::$name = $name;
     }
 }
 
-class Developer extends Person
-{
-    public $timePerWeek;
+Person::setName('Vasya');
+echo Person::$name;
 
-    public function __construct($name, $age, $job, $timePerWeek)
+$person = new Person();
+
+$person::setName('Gleb');
+echo $person::$name;
+
+Person::sum(20, 30);
+
+
+// Домашка
+class Vichitanie
+{
+    public static function minus($a, $b)
     {
-        parent::__construct($name, $age, $job);
-        $this->timePerWeek = $timePerWeek;
+        echo $a - $b;
     }
 }
 
-$developer = new Developer('Viktor', 20, 'developer', 20);
-echo $developer->name;
+Vichitanie::minus(35,10);
 
-abstract class Buildings
+$matematika = new Vichitanie();
+$matematika::minus(10,30);
+
+abstract class Delenie
 {
-    public $price;
-    public $size;
-    public $buildings;
-
-    public function __construct($price, $size, $buildings)
+    public static function delete($a,$b)
     {
-        $this->price = $price;
-        $this->size = $size;
-        $this->buildings = $buildings;
+        echo $a / $b;
     }
 }
 
-class Dacha extends Buildings
-{
-    public $time;
-
-    public function __construct($price, $size, $buildings, $time)
-    {
-        parent::__construct($price, $size, $buildings);
-        $this->time = $time;
-    }
-}
-
-$dacha = new Dacha(200, '300 metrov', 'not big', '3 hours per week');
-echo $dacha->buildings;
-
-
-class Magazine extends Buildings
-{
-    public $time;
-    public function __construct($price, $size, $buildings, $time)
-    {
-        $this->time = $time;
-        parent::__construct($price, $size, $buildings);
-    }
-}
-
-$stroitel = new Magazine(100, '500 m2', 'very big', '0,5 hours');
-echo $stroitel->time;
+Delenie::delete(10,2);
