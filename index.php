@@ -1,51 +1,63 @@
 <?php
 
-class Person
+interface Sportsmen
 {
-    public static $name;
+    public function run();
 
-    public static function sum($a, $b)
-    {
-        echo $a + $b;
-    }
+    public function gym();
 
-    public static function setName($name)
-    {
-        self::$name = $name;
-    }
+    public function eat();
 }
 
-Person::setName('Vasya');
-echo Person::$name;
+class Gymnast implements Sportsmen
+{
 
-$person = new Person();
+    public function run()
+    {
+        echo 'im running';
+    }
 
-$person::setName('Gleb');
-echo $person::$name;
+    public function gym()
+    {
+        echo 'im gym';
+    }
 
-Person::sum(20, 30);
+    public function eat()
+    {
+        echo 'im eat';
+    }
+}
 
 
 // Домашка
-class Vichitanie
+interface Airoport
 {
-    public static function minus($a, $b)
-    {
-        echo $a - $b;
-    }
+    public function zapravka();
+    public function polet();
+    public function posadka();
+    public function vzlet();
 }
 
-Vichitanie::minus(35,10);
+//ЧТОБЫ УБРАТЬ ОШИБКУ ПРИ ИМПЛЕМЕНТС ОТ ИНТЕРФЕЙСА ЗАЖИМАЕШЬ Alt+ENTER и жмешь дальше ENTER
+class Airoflot implements Airoport {
 
-$matematika = new Vichitanie();
-$matematika::minus(10,30);
-
-abstract class Delenie
-{
-    public static function delete($a,$b)
+    public function zapravka()
     {
-        echo $a / $b;
+        echo 'im zapravliyaus';
+    }
+
+    public function polet()
+    {
+        echo 'im lechy';
+    }
+
+    public function posadka()
+    {
+        echo 'im zaguz';
+    }
+
+    public function vzlet()
+    {
+        echo 'im wzletayi';
     }
 }
-
-Delenie::delete(10,2);
