@@ -1,78 +1,63 @@
 <?php
-class Person{
+class Person
+{
     public $name = 'Bob';
     public $age = 20;
+    public $hobby = 'swimming';
+    public $isMarried = false;
 
-    public function setName($name) {
+    public function __construct($name, $age, $hobby, $isMarried)
+    {
         $this->name = $name;
-    }
-
-    public function setAge($age) {
         $this->age = $age;
+        $this->hobby = $hobby;
+        $this->isMarried = $isMarried;
     }
 
-    public function getName() {
-        return $this->name;
-    }
-    public function getAge() {
-        return $this->age;
-    }
 }
 
-$person = new Person();
-$person2= new Person();
-$person3 = new Person();
+$person = new Person('Danil', 20, 'gym', false);
 
-$person->setName('Vasya');
-$person->setAge(30);
 echo $person->name;
-echo $person->age;
 
-echo $person->getName();
-echo $person->getAge();
 
 
 // домашка
-class Cat{
-    public $name = 'Murka';
-    public $age = 5;
+class FirstTochka
+{
+    public $pomidor;
+    public $ogyrec;
+    public $ketchup;
 
-    public function setName($name) {
-        $this->name = $name;
-    }
-    public function setAge($age) {
-        $this->age = $age;
-    }
-}
-
-$murka = new Cat();
-$murka->setName("Barsik");
-echo $murka->name;
-$murka->setAge(3);
-echo $murka->age;
-
-class Dog{
-    public $name = 'Erophei';
-    public $age = 9;
-
-    public function setName($name) {
-        $this->name = $name;
-    }
-    public function getName() {
-        return $this->name;
-    }
-
-    public function setAge($age) {
-        $this->age = $age;
-    }
-
-    public function getAge() {
-        return $this->age;
+    public function __construct($pomidor, $ogyrec, $ketchup)
+    {
+        $this->pomidor = $pomidor;
+        $this->ogyrec = $ogyrec;
+        $this->ketchup = $ketchup;
     }
 }
 
-$dog = new Dog();
-$dog->setName('Chapa');
-echo $dog->getName();
-$dog->setAge(3);
-echo $dog->getAge();
+$firstTochka = new FirstTochka('rozovii','green', 'torchin');
+
+echo $firstTochka->ketchup;
+
+class SecondTochka
+{
+    public $products = [
+      'ogyrec' => 'green',
+      'pomidor' => 'red',
+      'salat' => 'green',
+      'paprika' => 'red'
+    ];
+
+    public function __construct($ogyrec, $pomidor, $salat, $paprika)
+    {
+        $this->products['ogyrec'] = $ogyrec;
+        $this->products['pomidor'] = $pomidor;
+        $this->products['salat'] = $salat;
+        $this->products['paprika'] = $paprika;
+    }
+}
+$secondTochka = new SecondTochka('47 grn', '38 grn', '10 grn', '5 grn');
+
+echo $secondTochka->products['ogyrec'];
