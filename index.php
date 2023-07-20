@@ -1,63 +1,36 @@
 <?php
 
-interface Sportsmen
+class Plant
 {
-    public function run();
+    public $title;
+    protected $color;
 
-    public function gym();
+    // private - будет работать только в классе где указано (тут)
+    // protected - будет работать и в классе (тут) и в классе что наследуется (ниже)
+    public $season;
 
-    public function eat();
+    public function __construct($title, $color, $season)
+    {
+        $this->title = $title;
+        $this->color = $color;
+        $this->season = $season;
+    }
+
+    private function someCalculation($color)
+    {
+        $this->color = $color;
+    }
+
 }
 
-class Gymnast implements Sportsmen
+class Rose extends Plant
 {
-
-    public function run()
+    public function anotherCalc()
     {
-        echo 'im running';
-    }
-
-    public function gym()
-    {
-        echo 'im gym';
-    }
-
-    public function eat()
-    {
-        echo 'im eat';
+        $this->color = 'white';
     }
 }
 
+$plant = new Plant('tylipan', 'yellow', 'spring');
 
-// Домашка
-interface Airoport
-{
-    public function zapravka();
-    public function polet();
-    public function posadka();
-    public function vzlet();
-}
-
-//ЧТОБЫ УБРАТЬ ОШИБКУ ПРИ ИМПЛЕМЕНТС ОТ ИНТЕРФЕЙСА ЗАЖИМАЕШЬ Alt+ENTER и жмешь дальше ENTER
-class Airoflot implements Airoport {
-
-    public function zapravka()
-    {
-        echo 'im zapravliyaus';
-    }
-
-    public function polet()
-    {
-        echo 'im lechy';
-    }
-
-    public function posadka()
-    {
-        echo 'im zaguz';
-    }
-
-    public function vzlet()
-    {
-        echo 'im wzletayi';
-    }
-}
+$rose = new Rose('rose', 'red', 'spring');
